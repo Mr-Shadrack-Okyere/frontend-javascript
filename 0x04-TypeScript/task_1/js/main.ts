@@ -1,5 +1,6 @@
 // task_1/js/main.ts
 
+// Task 1 - Teacher interface
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -9,12 +10,18 @@ interface Teacher {
   [key: string]: any;
 }
 
-const teacher3: Teacher = {
+// Task 2 - Directors interface (extends Teacher)
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// example usage
+const director1: Directors = {
   firstName: 'John',
-  fullTimeEmployee: false,
   lastName: 'Doe',
   location: 'London',
-  contract: false,
+  fullTimeEmployee: true,
+  numberOfReports: 17,
 };
 
-console.log(teacher3);
+console.log(director1);
