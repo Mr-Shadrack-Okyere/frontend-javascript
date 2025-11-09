@@ -84,17 +84,13 @@ console.log(executeWork(emp2)); // Getting to director tasks
 // Task 7 - String literal types
 // ===========================
 
-// String literal type allowing only "Math" or "History"
-type Subjects = 'Math' | 'History';
+// String literal type
+export type Subjects = 'Math' | 'History';
 
-// Function that teaches a class based on the subject
+// Function
 export function teachClass(todayClass: Subjects): string {
-  if (todayClass === 'Math') {
-    return 'Teaching Math';
-  } else if (todayClass === 'History') {
-    return 'Teaching History';
-  }
-  // optional fallback (TypeScript will already check types)
+  if (todayClass === 'Math') return 'Teaching Math';
+  if (todayClass === 'History') return 'Teaching History';
   return '';
 }
 
