@@ -1,12 +1,23 @@
-// Task 3 - printTeacher function
-// ===========================
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
+/// <reference path="./crud.d.ts" />
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName[0]}. ${lastName}`;
+import { RowID, RowElement } from './interface';
+import * as CRUD from './crud.js';
+
+// Create a row object
+const row: RowElement = {
+  firstName: 'Guillaume',
+  lastName: 'Salva'
 };
 
-console.log(printTeacher(teacher3.firstName, teacher3.lastName)); // J. Doe
-console.log(printTeacher(director1.firstName, director1.lastName)); // J. Doe
+// Insert row and get a new RowID
+const newRowID: RowID = CRUD.insertRow(row);
+
+// Update row by adding age
+const updatedRow: RowElement = {
+  ...row,
+  age: 23
+};
+
+// Update and delete using CRUD functions
+CRUD.updateRow(newRowID, updatedRow);
+CRUD.deleteRow(newRowID);
