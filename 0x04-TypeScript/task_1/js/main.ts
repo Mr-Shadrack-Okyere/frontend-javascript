@@ -25,3 +25,26 @@ const director1: Directors = {
 };
 
 console.log(director1);
+
+// Task 3 - printTeacher function interface
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Task 3 - printTeacher function implementation
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName[0]}. ${lastName}`;
+};
+
+// Example usage
+console.log(printTeacher(director1.firstName, director1.lastName)); // J. Doe
+
+// You can also test with other teachers
+const teacher1: Teacher = {
+  firstName: 'Jane',
+  lastName: 'Smith',
+  location: 'Accra',
+  fullTimeEmployee: false,
+};
+
+console.log(printTeacher(teacher1.firstName, teacher1.lastName)); // J. Smith
