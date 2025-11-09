@@ -1,16 +1,61 @@
 // ===========================
-// Task 2 - Directors interface (extends Teacher)
+// Task 5 - Advanced Types Part 1
 // ===========================
-interface Directors extends Teacher {
-  numberOfReports: number;
+
+// Director interface
+interface DirectorInterface {
+  workFromHome(): string;
+  getCoffeeBreak(): string;
+  workDirectorTasks(): string;
 }
 
-const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
-  fullTimeEmployee: true,
-  numberOfReports: 17,
-};
+// Teacher interface
+interface TeacherInterface {
+  workFromHome(): string;
+  getCoffeeBreak(): string;
+  workTeacherTasks(): string;
+}
 
-console.log(director1);
+// Director class implementing DirectorInterface
+class Director implements DirectorInterface {
+  workFromHome(): string {
+    return 'Working from home';
+  }
+
+  getCoffeeBreak(): string {
+    return 'Getting a coffee break';
+  }
+
+  workDirectorTasks(): string {
+    return 'Getting to director tasks';
+  }
+}
+
+// Teacher class implementing TeacherInterface
+class Teacher implements TeacherInterface {
+  workFromHome(): string {
+    return 'Cannot work from home';
+  }
+
+  getCoffeeBreak(): string {
+    return 'Cannot have a break';
+  }
+
+  workTeacherTasks(): string {
+    return 'Getting to work';
+  }
+}
+
+// createEmployee function
+function createEmployee(salary: number | string): Director | Teacher {
+  if (typeof salary === 'number' && salary < 500) {
+    return new Teacher();
+  } else {
+    return new Director();
+  }
+}
+
+// Example usage
+console.log(createEmployee(200));    // Teacher instance
+console.log(createEmployee(1000));   // Director instance
+console.log(createEmployee('$500')); // Director instance
