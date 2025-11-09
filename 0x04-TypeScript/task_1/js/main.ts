@@ -1,6 +1,4 @@
-// task_1/js/main.ts
-
-// Teacher interface
+// Task 1 - Teacher interface
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -10,8 +8,8 @@ interface Teacher {
   [key: string]: any;
 }
 
-// Example teacher
-const teacher3: Teacher = {
+// Example Teacher
+const teacher1: Teacher = {
   firstName: 'John',
   lastName: 'Doe',
   fullTimeEmployee: false,
@@ -19,14 +17,14 @@ const teacher3: Teacher = {
   contract: false,
 };
 
-console.log(teacher3);
+console.log(teacher1);
 
-// Directors interface (extends Teacher)
+// Task 2 - Directors interface (extends Teacher)
 interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-// Example director
+// Example Director
 const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
@@ -37,7 +35,7 @@ const director1: Directors = {
 
 console.log(director1);
 
-// printTeacher function
+// Task 3 - printTeacher function
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
