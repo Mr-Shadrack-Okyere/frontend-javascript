@@ -1,13 +1,13 @@
 // main.ts
 
-// Define the Teacher interface
+// Teacher interface definition
 interface Teacher {
-  readonly firstName: string;        // only modifiable when initialized
-  readonly lastName: string;         // only modifiable when initialized
-  fullTimeEmployee: boolean;         // always defined
-  yearsOfExperience?: number;        // optional
-  location: string;                  // always defined
-  [key: string]: any;                // allow additional properties like contract
+  readonly firstName: string;          // firstName is readonly
+  readonly lastName: string;           // lastName is readonly
+  fullTimeEmployee: boolean;           // mandatory
+  location: string;                    // mandatory
+  yearsOfExperience?: number;          // optional
+  [key: string]: any;                  // allow any other property
 }
 
 // Create a teacher object
@@ -16,17 +16,8 @@ const teacher3: Teacher = {
   lastName: 'Doe',
   fullTimeEmployee: false,
   location: 'London',
-  contract: false
+  contract: false,  // additional property
 };
 
-// Log the object
+// Output the teacher object
 console.log(teacher3);
-
-/* Expected Output:
-Object
-  contract: false
-  firstName: "John"
-  fullTimeEmployee: false
-  lastName: "Doe"
-  location: "London"
-*/
