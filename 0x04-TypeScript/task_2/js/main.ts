@@ -78,3 +78,26 @@ const emp2 = createEmployee(1000);
 
 console.log(executeWork(emp1)); // Getting to work
 console.log(executeWork(emp2)); // Getting to director tasks
+
+
+// ===========================
+// Task 7 - String literal types
+// ===========================
+
+// String literal type allowing only "Math" or "History"
+type Subjects = 'Math' | 'History';
+
+// Function that teaches a class based on the subject
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  // optional fallback (TypeScript will already check types)
+  return '';
+}
+
+// Example usage
+console.log(teachClass('Math'));    // Teaching Math
+console.log(teachClass('History')); // Teaching History
